@@ -33,6 +33,9 @@ Documentation = "https://github.com/unknown/textual-passphrase#readme"
 Issues = "https://github.com/unknown/textual-passphrase/issues"
 Source = "https://github.com/unknown/textual-passphrase"
 
+[tool.black]
+line-length = 180
+
 [tool.hatch.version]
 path = "textual_passphrase/__about__.py"
 
