@@ -1,0 +1,18 @@
+Screen {
+  align: center middle;
+}
+
+Footer {
+  text-align: right;
+}
+
+#PassphraseStatic {
+  text-align: center;
+  color: pink;
+}
+
+#CurrentPassphraseNStatic {
+  dock: bottom;
+  text-align: right;
+  offset: 0 -1;
+}
