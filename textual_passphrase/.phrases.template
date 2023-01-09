@@ -1,0 +1,24 @@
+## Sample .phrases
+# Lines starting with # are considered comments
+
+# Blank lines are also ignored
+
+# Colors
+blue
+red
+green
+yellow
+pink
+purple
+
+# Adverbs
+slowly
+quickly
+mindlessly
+
+# Game Consoles
+xbox
+playstation
+
+# Names
+Obama
