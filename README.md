@@ -13,6 +13,8 @@
 
 ## Installation
 
+This is not a published package.
+
 ```console
 pipx install <tbd>
 ```
