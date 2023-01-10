@@ -18,9 +18,3 @@ Horizontal {
   text-align: center;
   color: green;
 }
-
-#CurrentPassphraseNStatic {
-  dock: bottom;
-  text-align: right;
-  offset: 0 -1;
-}
