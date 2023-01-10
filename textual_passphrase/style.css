@@ -6,9 +6,17 @@ Footer {
   text-align: right;
 }
 
+Vertical {
+  align: center middle;
+}
+
+Horizontal {
+  align: center middle;
+}
+
 #PassphraseStatic {
   text-align: center;
-  color: pink;
+  color: green;
 }
 
 #CurrentPassphraseNStatic {
