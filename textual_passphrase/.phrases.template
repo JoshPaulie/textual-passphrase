@@ -1,7 +1,11 @@
-## Sample .phrases
+# Sample .phrases
 # Lines starting with # are considered comments
+# (Blank lines are also ignored)
 
-# Blank lines are also ignored
+# Phrase tips:
+# Phrases should contain a healthy amount of phrases unique to you and your interests. Nicknames, games, hobby terminology
+# Do not track/commit your phrase publically
+# The more phrases, the better. Be wary of homophones, as those can be a bit trickier to remember.
 
 # Colors
 blue
@@ -15,10 +19,22 @@ purple
 slowly
 quickly
 mindlessly
+gently
 
-# Game Consoles
-xbox
-playstation
+# Animals
+dog
+cat
+bird
+turtle
+bear
+deer
 
-# Names
-Obama
+# Places
+school
+office
+store
+
+# Food
+apple
+cookie
+grape
