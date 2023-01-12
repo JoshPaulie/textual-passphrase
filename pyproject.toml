@@ -29,27 +29,21 @@ dev = [
 ]
 
 [project.urls]
-Documentation = "https://github.com/unknown/textual-passphrase#readme"
-Issues = "https://github.com/unknown/textual-passphrase/issues"
-Source = "https://github.com/unknown/textual-passphrase"
+Documentation = "https://github.com/joshpaulie/textual-passphrase#readme"
+Issues = "https://github.com/joshpaulie/textual-passphrase/issues"
+Source = "https://github.com/joshpaulie/textual-passphrase"
 
 [tool.black]
 line-length = 180
 
+[tool.pylint.format]
+max-line-length = 180
+
+[tool.pylint."messages control"]
+disable =["attribute-defined-outside-init"]
+
 [tool.hatch.version]
 path = "textual_passphrase/__about__.py"
-
-[tool.hatch.envs.default]
-dependencies = [
-  "pytest",
-  "pytest-cov",
-]
-[tool.hatch.envs.default.scripts]
-cov = "pytest --cov-report=term-missing --cov-config=pyproject.toml --cov=textual_passphrase --cov=tests {args}"
-no-cov = "cov --no-cov {args}"
-
-[[tool.hatch.envs.test.matrix]]
-python = ["37", "38", "39", "310", "311"]
 
 [tool.coverage.run]
 branch = true
