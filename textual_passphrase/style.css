@@ -1,20 +1,33 @@
-Screen {
-  align: center middle;
-}
-
-Footer {
-  text-align: right;
-}
-
-Vertical {
-  align: center middle;
-}
-
-Horizontal {
-  align: center middle;
-}
-
 #PassphraseStatic {
   text-align: center;
-  color: green;
+  color: pink;
+}
+
+#PassphraseHorizontal {
+  align: center middle;
+  height: 1fr;
+  align: center middle;
+}
+
+#PassphraseOptionBar {
+  align: center middle;
+  height: 1fr;
+}
+
+#PassphraseSeperatorInput {
+  width: 10;
+}
+
+#PassphraseLengthInput {
+  width: 10;
+}
+
+.PassphraseOptionGroup {
+  width: 1fr;
+  align: center middle;
+}
+
+.PassphraseOptionLabel {
+  text-align: left;
+  align: center middle;
 }
