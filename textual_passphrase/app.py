@@ -3,13 +3,12 @@ import random
 
 from textual.app import App, ComposeResult
 from textual.binding import Binding
-from textual.containers import *
+from textual.containers import Horizontal, Vertical
 from textual.screen import Screen
-from textual.widgets import Checkbox, Footer, Static
+from textual.widgets import Checkbox, Footer, Input, Label, Static
 
 
 def clean_phrases(phrases: list[str]) -> list[str]:
-    phrases = [phrase.title() for phrase in phrases]
     phrases = [phrase for phrase in phrases if phrase]
     phrases = [phrase for phrase in phrases if not phrase.startswith("#")]
     return phrases
@@ -25,13 +24,38 @@ class NoDotPhrases(Screen):
 class PassphraseApp(App):
 
     BINDINGS = [
-        Binding("space,enter", "generate_passphrase", "New Passphrase", key_display="Spacebar | Enter"),
+        Binding("space,enter", "generate_passphrase", "New Passphrase", key_display="•"),
     ]
     CSS_PATH = "style.css"
 
     def compose(self) -> ComposeResult:
         self.passphrase_static = Static("Textual-Passphrase-Generator", id="PassphraseStatic")
-        yield self.passphrase_static
+        yield Horizontal(
+            self.passphrase_static,
+            id="PassphraseHorizontal",
+        )
+        yield Horizontal(
+            Vertical(
+                Label("Include digit", classes="PassphraseOptionLabel"),
+                Checkbox(),
+                classes="PassphraseOptionGroup",
+            ),
+            Vertical(
+                Label("Titlecase", classes="PassphraseOptionLabel"),
+                Checkbox(),
+                classes="PassphraseOptionGroup",
+            ),
+            Vertical(
+                Label("Seperator", classes="PassphraseOptionLabel"),
+                Input(value="-", placeholder="-", id="PassphraseSeperatorInput"),
+                classes="PassphraseOptionGroup",
+            ),
+            Vertical(
+                Label("Phrase length", classes="PassphraseOptionLabel"),
+                Input(value="3", placeholder="3", id="PassphraseLengthInput"),
+                classes="PassphraseOptionGroup",
+            ),
+        )
         yield Footer()
 
     def on_mount(self):
