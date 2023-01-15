@@ -5,7 +5,27 @@ from textual.app import App, ComposeResult
 from textual.binding import Binding
 from textual.containers import Horizontal, Vertical
 from textual.screen import Screen
-from textual.widgets import Checkbox, Footer, Input, Label, Static
+from textual.widgets import Button, Checkbox, Footer, Input, Label, Static
+
+
+class NumberSelector(Static):
+    def compose(self):
+        self.value = 0
+
+        self.value_label = Label(str(self.value))
+        self.inc_button = Button("+", id="inc")
+        self.dec_button = Button("-", id="dec")
+        yield Horizontal(
+            self.dec_button,
+            self.value_label,
+            self.inc_button,
+        )
+
+    def on_mount(self):
+        self.value_label.styles.width = "1fr"
+        self.value_label.styles.text_align = "center"
+        self.inc_button.styles.width = "1fr"
+        self.dec_button.styles.width = "1fr"
 
 
 def clean_phrases(phrases: list[str]) -> list[str]:
@@ -52,7 +72,7 @@ class PassphraseApp(App):
             ),
             Vertical(
                 Label("Phrase length", classes="PassphraseOptionLabel"),
-                Input(value="3", placeholder="3", id="PassphraseLengthInput"),
+                NumberSelector(),
                 classes="PassphraseOptionGroup",
             ),
         )
