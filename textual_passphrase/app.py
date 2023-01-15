@@ -7,6 +7,8 @@ from textual.containers import Horizontal, Vertical
 from textual.screen import Screen
 from textual.widgets import Button, Checkbox, Footer, Input, Label, Static
 
+from .example_module import example_import
+
 
 class NumberSelector(Static):
     def compose(self):
@@ -79,6 +81,7 @@ class PassphraseApp(App):
         yield Footer()
 
     def on_mount(self):
+        print(example_import)
         self.phrase_bank = []
         self.current_passphrase = ""
 
